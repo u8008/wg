@@ -9,6 +9,9 @@ Managed by the `go` sub-commands shipped with Golang, so nothing is special or u
   - Upgrade with `go get -u github.com/u8008/wg/...`
   - Uninstall with `rm -f $GOPATH/src/wg`
   - Read docs with `go doc -all github.com/u8008/wg/<pkg>`
-## Packages (PENDING)
+## Packages
+### test
+  - A wrapper of the built-in `testing` package to facilitate the unit-testing
+  - [Testing with test.Ok()](../../wiki/test.Ok)
 ## License
 [The MIT License](LICENSE)
