@@ -1,3 +1,3 @@
 module github.com/u8008/wg
 
-go 1.13
+go 1.14

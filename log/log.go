@@ -5,7 +5,7 @@ Package log implements a logger
  - It extends the built-in log package and provides the methods to log at
  selected Syslog levels
  - It formats and writes each log line to Logger's $Wi in the format of:
-   - <level-byte> <utc-date> <utc-time> <file:line> <formatted-message>
+   - <utc-date> <utc-time> <file:line> <level-char> <formatted-message>
  - It is thread-safe for using the built-in log package underneath, but has no
  supports of log rotation and throttling
 */
@@ -105,9 +105,8 @@ func logAt(l *Logger, level Level, fs string, as ...interface{}) {
 		return
 	}
 
-	l.Log.SetPrefix(logSs[level] + " ")
 	// Use 3 as the call-stack depth for having this func in the middle
-	l.Log.Output(3, fmt.Sprintf(fs, as...))
+	l.Log.Output(3, logSs[level]+" "+fmt.Sprintf(fs, as...))
 }
 
 // Format $fs and $as and write it at Panic level

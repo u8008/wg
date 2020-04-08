@@ -11,7 +11,7 @@ import (
 
 /*
 If $c is false, it fails the test with the caller's filename and line #, and
-logs the error with $fs and $as, or else it does nothing
+the error formatted with $fs and $as, or else it does nothing
 */
 func Ok(t *testing.T, c bool, fs string, as ...interface{}) {
 	// Safe to skip sanity checks
